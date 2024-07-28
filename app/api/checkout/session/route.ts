@@ -1,8 +1,7 @@
-import { NextRequest, NextResponse } from "next/server";
 import getStripe from "../../../../utils/get-stripejs";
-import { NextApiRequest, NextApiResponse } from "next/types";
+import { type NextRequest, NextResponse } from "next/server";
 
-export async function POST(req: NextApiRequest, res: NextApiResponse) {
+export async function POST(req: NextRequest, res: NextResponse) {
   const host = process.env.NEXT_PUBLIC_HOST;
   console.log("body", req);
 
@@ -32,8 +31,4 @@ export async function POST(req: NextApiRequest, res: NextApiResponse) {
   } catch (err) {
     return NextResponse.json({ error: "Error checkout session" });
   }
-}
-
-export async function GET(req, res) {
-  return NextResponse.json("Hello");
 }
