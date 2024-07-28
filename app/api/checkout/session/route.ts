@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import getStripe from "../../../../utils/get-stripejs";
+import { NextApiRequest, NextApiResponse } from "next/types";
 
-export async function POST(req: any, res: any) {
+export async function POST(req: NextApiRequest, res: NextApiResponse) {
   const host = process.env.NEXT_PUBLIC_HOST;
   console.log("body", req);
 
